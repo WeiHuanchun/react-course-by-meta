@@ -164,3 +164,51 @@ const Feedback = () => {
 
 export default Feedback;
 ```
+
+## Stateless component vs. Stateful component
+
+![Stateless component vs. Stateful component](<public/images/Stateless component vs. Stateful component.png>)
+
+## Must a component be default export?
+
+No, a component does not have to be a default export in React. You can use either default exports or named exports to export your components.
+
+A default export means that the component can be imported with any name. For example, if you have a component like this:
+
+```jsx
+// MyComponent.js
+export default function MyComponent() {
+  return <div>Hello</div>;
+}
+```
+
+You can import it like this:
+
+```jsx
+import AnyNameYouWant from './MyComponent';
+```
+
+On the other hand, a named export requires that the component be imported with the exact same name. For example, if you have a component like this:
+
+```jsx
+// MyComponent.js
+export function MyComponent() {
+  return <div>Hello</div>;
+}
+```
+
+You would import it like this:
+
+```jsx
+import { MyComponent } from './MyComponent';
+```
+
+You can choose to use either default exports or named exports based on your preference and your project's coding standards. Some developers prefer named exports because they can make the code more self-documenting and can help prevent naming conflicts.
+
+## useContext
+
+To solve props drilling problem, there is `useContext`
+
+> Props drilling can lead to code that is hard to maintain and understand. It can also cause unnecessary renders if a parent component passes a prop that changes, causing all child components to re-render, even if they don't use the prop.
+>
+> To solve the props drilling problem, React provides context API (useContext hook) and other state management libraries like Redux or MobX can also be used. These tools allow you to share state between components without having to pass props through intermediate components.

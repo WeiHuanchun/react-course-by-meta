@@ -1,9 +1,10 @@
 import Feedback from './components/Feedback';
 import ListExample from './components/ListExample';
+import './App.css';
 
 const App = () => {
     return (
-        <div>
+        <div className='App'>
             <ListExample />
             <Feedback />
         </div>

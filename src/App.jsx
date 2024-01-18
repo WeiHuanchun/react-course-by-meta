@@ -8,6 +8,7 @@ import RefExample from './components/RefExample';
 import ElementTree from './components/ElementTree';
 import LiveOrders from './components/LiveOrders';
 import ConfirmationDialog from './components/ConfirmationDialog';
+import Buttons from './components/Buttons';
 
 const App = () => {
     return (
@@ -21,6 +22,7 @@ const App = () => {
             <ElementTree />
             <LiveOrders />
             <ConfirmationDialog />
+            <Buttons />
         </div>
     );
 };

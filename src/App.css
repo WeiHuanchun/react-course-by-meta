@@ -50,3 +50,14 @@
   justify-content: center;
   align-items: center;
 }
+
+.btn{
+  margin-left: 10px;
+}
+.btn-primary {
+  background-color: green;
+}
+
+.btn-secondary {
+  background-color: red;
+}

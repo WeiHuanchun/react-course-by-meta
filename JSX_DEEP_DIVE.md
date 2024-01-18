@@ -12,8 +12,20 @@
 
 ### Containment & Specialization
 
-> **children props**
-> ![Dialog](https://)
+> **children props** > ![Dialog](https://)
 
 **It is more robust and reusable with the special children prop**
+
+## Visualize Orders
+
+### `React.cloneElement` & `React.children`
+
+#### `React.cloneElement(element, [props])`
+
+- Modify children properties
+- Add to children properties
+- Extend functionality of children
+
+![Dynamically add props](https://)
+#### `React.children.map(children, callback)`
 

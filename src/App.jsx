@@ -6,6 +6,8 @@ import EffectExample from './components/EffectExample';
 import ReducerExample from './components/ReducerExample';
 import RefExample from './components/RefExample';
 import ElementTree from './components/ElementTree';
+import LiveOrders from './components/LiveOrders';
+import ConfirmationDialog from './components/ConfirmationDialog';
 
 const App = () => {
     return (
@@ -17,6 +19,8 @@ const App = () => {
             <ReducerExample />
             <RefExample />
             <ElementTree />
+            <LiveOrders />
+            <ConfirmationDialog />
         </div>
     );
 };

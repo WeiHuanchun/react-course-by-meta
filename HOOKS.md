@@ -241,3 +241,63 @@ javascript is single-thread execution
 
 ## `useReducer` Hook
 
+```jsx
+import React from 'react';
+
+const reducer = (state, action) => {
+  if (action.type === 'increment') return { money: state.money + 1 };
+  if (action.type === 'decrement') return { money: state.money - 1 };
+  return state;
+};
+
+const ReducerExample = () => {
+  const initialState = { money: 100 };
+  const [state, dispatch] = React.useReducer(reducer, initialState);
+
+  return (
+    <div>
+      <h1>Wallet: {state.money}</h1>
+      <div>
+        <button onClick={() => dispatch({ type: 'increment' })}>
+          Increment
+        </button>
+        <button
+          onClick={() => {
+            dispatch({ type: 'decrement' });
+          }}
+        >
+          Decrement
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default ReducerExample;
+```
+## `useRef` Hook
+```jsx
+import React from 'react';
+
+const RefExample = () => {
+  const formRef = React.useRef(null);
+  const [state, setState] = React.useState('');
+  const focusInput = () => {
+    formRef.current.focus();
+    console.log(formRef.current.value);
+  };
+  const changeHandler = () => {
+    setState(formRef.current.value);
+  };
+  return (
+    <div>
+      <h1>useRef Hook</h1>
+      <h3>{state}</h3>
+      <input type="text" ref={formRef} onChange={changeHandler} />
+      <button onClick={focusInput}>Focus Input</button>
+    </div>
+  );
+};
+
+export default RefExample;
+```

@@ -4,6 +4,7 @@ import './App.css';
 import Goal from './components/Goal';
 import EffectExample from './components/EffectExample';
 import ReducerExample from './components/ReducerExample';
+import RefExample from './components/RefExample';
 
 const App = () => {
     return (
@@ -13,6 +14,7 @@ const App = () => {
             <Goal />
             <EffectExample />
             <ReducerExample />
+            <RefExample />
         </div>
     );
 };

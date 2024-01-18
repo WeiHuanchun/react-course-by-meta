@@ -12,6 +12,7 @@ function GoalForm(props) {
     props.onAdd(formData);
     setFormData({ goal: '', by: '' });
   }
+  
   return (
     <>
       <h1>My Little Lemon Goals</h1>

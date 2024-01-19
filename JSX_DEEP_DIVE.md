@@ -134,3 +134,9 @@ export default Buttons;
 
 **still alert login, because
 the onClick in LoginButton is after the {...buttonProps} , This should be noticed when using spread operator**
+
+## HOC(Higher-order component)
+
+**cross-cutting design**
+
+[How to Use Higher-Order Components in React](https://www.freecodecamp.org/news/higher-order-components-in-react/)

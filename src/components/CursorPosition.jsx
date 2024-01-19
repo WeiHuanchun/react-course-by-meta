@@ -15,20 +15,26 @@ const withMousePosition = (WrappedComponent) => {
         window.removeEventListener('mousemove', handleMousePositionChange);
       };
     }, []);
-    return <WrappedComponent {...props} mousePosition={mousePosition} />;
+    return (
+      <WrappedComponent
+        {...props}
+        mousePosition={mousePosition}
+        style={{ marginLeft: '10px' }}
+      />
+    );
   };
 
   return ComponentWithMousePosition;
 };
 
-const PanelMouseLogger = ({ mousePosition }) => {
+const PanelMouseLogger = ({ mousePosition, style }) => {
   if (!mousePosition) return null;
   return (
     <div>
       <p>Mouse position:</p>
       <div className="row">
         <span>x:{mousePosition.x}</span>
-        <span>y: {mousePosition.y}</span>
+        <span style={style}>y: {mousePosition.y}</span>
       </div>
     </div>
   );
@@ -39,6 +45,7 @@ PanelMouseLogger.propTypes = {
     x: PropTypes.number.isRequired,
     y: PropTypes.number.isRequired,
   }),
+  style: PropTypes.object.isRequired,
 };
 
 const PointMouseLogger = ({ mousePosition }) => {

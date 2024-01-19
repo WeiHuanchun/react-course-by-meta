@@ -10,22 +10,24 @@ import LiveOrders from './components/LiveOrders';
 import ConfirmationDialog from './components/ConfirmationDialog';
 import Buttons from './components/Buttons';
 import CursorPosition from './components/CursorPosition';
+import RenderProps from './components/RenderProps';
 
 const App = () => {
-    return (
-        <div className='App'>
-            <ListExample />
-            <Feedback />
-            <Goal />
-            <EffectExample />
-            <ReducerExample />
-            <RefExample />
-            <ElementTree />
-            <LiveOrders />
-            <ConfirmationDialog />
-            <Buttons />
-            <CursorPosition />
-        </div>
-    );
+  return (
+    <div className="App">
+      <ListExample />
+      <Feedback />
+      <Goal />
+      <EffectExample />
+      <ReducerExample />
+      <RefExample />
+      <ElementTree />
+      <LiveOrders />
+      <ConfirmationDialog />
+      <Buttons />
+      <CursorPosition />
+      <RenderProps />
+    </div>
+  );
 };
 export default App;

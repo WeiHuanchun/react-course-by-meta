@@ -10,7 +10,6 @@ const withMousePosition = (WrappedComponent) => {
         setMousePosition({ x: event.clientX, y: event.clientY });
       };
       window.addEventListener('mousemove', handleMousePositionChange);
-
       return () => {
         window.removeEventListener('mousemove', handleMousePositionChange);
       };

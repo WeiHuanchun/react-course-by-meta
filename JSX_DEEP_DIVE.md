@@ -140,3 +140,8 @@ the onClick in LoginButton is after the {...buttonProps} , This should be notice
 **cross-cutting design**
 
 [How to Use Higher-Order Components in React](https://www.freecodecamp.org/news/higher-order-components-in-react/)
+
+## Render Props Pattern
+
+> Take functions that return React elements and call them inside their render logic
+

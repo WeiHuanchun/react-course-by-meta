@@ -11,4 +11,14 @@
 
 ## Jest
 
-JavaScript test runner
+**JavaScript test runner  
+Provides access to jsdom**
+
+### Mocking
+
+Help keep unit test stand alone
+
+## React Testing Library
+
+**Set of utilities  
+Fulfiils testing best practices **

@@ -11,6 +11,7 @@ import ConfirmationDialog from './components/ConfirmationDialog';
 import Buttons from './components/Buttons';
 import CursorPosition from './components/CursorPosition';
 import RenderProps from './components/RenderProps';
+import ForTest from './components/ForTest';
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
       <Buttons />
       <CursorPosition />
       <RenderProps />
+      <ForTest />
     </div>
   );
 };

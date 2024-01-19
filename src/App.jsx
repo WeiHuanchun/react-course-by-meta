@@ -9,6 +9,7 @@ import ElementTree from './components/ElementTree';
 import LiveOrders from './components/LiveOrders';
 import ConfirmationDialog from './components/ConfirmationDialog';
 import Buttons from './components/Buttons';
+import CursorPosition from './components/CursorPosition';
 
 const App = () => {
     return (
@@ -23,6 +24,7 @@ const App = () => {
             <LiveOrders />
             <ConfirmationDialog />
             <Buttons />
+            <CursorPosition />
         </div>
     );
 };

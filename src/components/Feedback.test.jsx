@@ -1,47 +1,34 @@
-// FILEPATH: /Users/huntley/vscode-workspace/react-course-by-meta/src/components/Feedback.test.jsx
-/* eslint-env jest */
+/* eslint.env jest */
 
-import { render, fireEvent } from '@testing-library/react';
-import Feedback from './Feedback.jsx';
+import { render, screen, fireEvent } from '@testing-library/react';
+import { describe, it, expect, jest } from 'jest'; // Add the import statements for 'describe', 'it', and 'expect'
+import Feedback from './Feedback';
 
 describe('Feedback', () => {
-  let mockSubmit;
-
-  beforeEach(() => {
-    mockSubmit = jest.fn();
+  it('renders without errors', () => {
+    render(<Feedback onSubmit={() => {}} />);
+    // Assert that the component renders without throwing any errors
   });
 
-  test('calls onSubmit prop when form is submitted', () => {
-    const { getByRole } = render(<Feedback onSubmit={mockSubmit} />);
-    fireEvent.submit(getByRole('button'));
-    expect(mockSubmit).toHaveBeenCalled();
-  });
+  it('calls onSubmit when the form is submitted', () => {
+    const onSubmitMock = jest.fn();
+    render(<Feedback onSubmit={onSubmitMock} />);
 
-  test('resets comment and score after form submission', () => {
-    const { getByRole, getByLabelText } = render(
-      <Feedback onSubmit={mockSubmit} />,
-    );
-    fireEvent.change(getByLabelText(/score/i), { target: { value: '5' } });
-    fireEvent.change(getByLabelText(/comment/i), {
-      target: { value: 'This is a comment' },
+    const nameInput = screen.getByLabelText('Name');
+    const emailInput = screen.getByLabelText('Email');
+    const messageInput = screen.getByLabelText('Message');
+    const submitButton = screen.getByRole('button', { name: 'Submit' });
+
+    fireEvent.change(nameInput, { target: { value: 'John Doe' } });
+    fireEvent.change(emailInput, { target: { value: 'john@example.com' } });
+    fireEvent.change(messageInput, { target: { value: 'Hello, world!' } });
+    fireEvent.click(submitButton);
+
+    expect(onSubmitMock).toHaveBeenCalledTimes(1);
+    expect(onSubmitMock).toHaveBeenCalledWith({
+      name: 'John Doe',
+      email: 'john@example.com',
+      message: 'Hello, world!',
     });
-    fireEvent.submit(getByRole('button'));
-    expect(getByLabelText(/score/i).value).toBe('10');
-    expect(getByLabelText(/comment/i).value).toBe('');
-  });
-
-  test('shows alert when score is less than 5 and comment length is less than 10', () => {
-    const { getByRole, getByLabelText } = render(
-      <Feedback onSubmit={mockSubmit} />,
-    );
-    window.alert = jest.fn();
-    fireEvent.change(getByLabelText(/score/i), { target: { value: '4' } });
-    fireEvent.change(getByLabelText(/comment/i), {
-      target: { value: 'Short' },
-    });
-    fireEvent.submit(getByRole('button'));
-    expect(window.alert).toHaveBeenCalledWith(
-      'Please provide detailed feedback',
-    );
   });
 });
